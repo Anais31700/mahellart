@@ -39,6 +39,7 @@ Le projet Mahellart est un site web dynamique développé en PHP, dédié à la 
 - **Accueil** : Découvrez les dernières œuvres et explorez les différents thèmes.
 - **Connexion** : Connectez-vous pour accéder à des fonctionnalités supplémentaires comme liker une réalisation.
 - **Administration** : Accès réservé aux administrateurs pour gérer le contenu du site.
+- **connexion administrateur** : john.doe@mahellart.com MDP: Admin1
 
 ## Contribution
 
