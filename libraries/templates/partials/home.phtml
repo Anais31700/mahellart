@@ -1,0 +1,47 @@
+<!-- PAGE D'ACCUEIL -->
+<div class="login">
+    <?php
+        // Vérifiez si l'utilisateur est connecté
+        if (\Session::isConnected()) {
+            // On récupère le prénom de l'utilisateur
+            $prenom = \Session::getFirstName();
+            echo "<h2>Bienvenue $prenom</h2>";
+        } else {
+            echo "<h2>Bienvenue Visiteur</h2>";
+        }
+    ?>
+    <hr>
+</div>
+
+<section id="presentation">
+
+    <!-- PRESENTATION DE L'ARTISTE -->
+    <article>
+        <h3>Qui Suis-Je ?</h3>
+        <div>
+            <img src="<?= $tplVars['WWW_URL']; ?>assets/img/cutbgbody.jpg" alt="cutter paper" />
+            <div class="text">
+                <p>Mael, jeune artiste perdu dans les méandres de l'imagination, amoureux de l'art et de toutes ses possibilités. </p>
+                <p>Avec le temps, je me suis orienté vers le Papier Découpé car c'est un art mis trop peu en avant malgré de
+                    multiples surprises que l'on peut trouver au grés des musés, réseaux sociaux et autres moyens de diffusion.</p>
+                <p>L'amour pour cet art m'est venu de part mes études, grâce à un projet d'illustration sur les insectes,
+                    qui m'a fait découvrir un nouvel univers que je peux enfin maitrisé avec le temps.</p>
+            </div>
+        </div>
+    </article>
+
+    <div class="clear"></div>
+
+    <!-- PRESENTATION DE L'ART -->
+    <article>
+        <h4>Un peu d'histoire ... </h4>
+
+        <p>L'art du Papier Découpé existe depuis des années mais n'est que très peu représenté par rapport aux autres types
+            d'arts ou tecnniques.</p>
+        <p>Selon le pays, il est travaillé d'une manière différente mais il met toujours en avant le côté imaginaire ou la mise
+            en scène de situation.</p>
+        <p>Depuis quelques années, certaines éditions remettent au goût du jour ce bel art, en faisant un hommage
+            de part des artistes qui ont le talent de pouvoir le mettre en lumière.</p>
+    </article>
+
+</section>

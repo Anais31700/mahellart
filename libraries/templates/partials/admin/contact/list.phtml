@@ -1,0 +1,25 @@
+<!-- LISTE DES MAILS ENVOYES PAR LE FORMULAIRE DE CONTACT -->
+
+<h2>Liste des mails reçus</h2>
+<hr>
+
+    <section class="listmail"> 
+
+        <!-- BOUCLE SUR LES MAILS -->
+        <?php foreach($tplVars['list'] as $item): ?>
+            <article class="mail">
+                    <p><b>Nom :</b> <?= htmlspecialchars($item['lastname']); ?></p>
+                    <p><b>Prénom :</b> <?= htmlspecialchars($item['firstname']); ?></p>
+                    <p><b>Email :</b> <?= htmlspecialchars($item['mail']); ?></p>
+                    <p><b>Date :</b> <?= htmlspecialchars($item['created_at']); ?></p>
+                    <p><b>Objet :</b> <?= htmlspecialchars($item['objet']); ?></p>
+                    <p><b>Message :</b> <?= htmlspecialchars($item['message']); ?></p>
+                    <br>
+                    
+                    <!-- RENVOIE VERS LA BOITE MAIL POUR REPONDRE-->
+                    <a href="mailto: <?= htmlspecialchars($item['mail']); ?>" class="validate">Répondre</a>
+                    <hr>
+            </article>
+        <?php endforeach; ?>
+
+    </section>

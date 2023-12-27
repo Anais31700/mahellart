@@ -1,0 +1,41 @@
+<?php
+    $model = new \Models\Realisations();
+    // Obtention l'ID de l'utilisateur connecté
+    $userId = \Session::isConnected() ? \Session::getId() : null;
+?>
+
+<!-- DETAIL DES REALISATIONS EN FONCTION DU THEME -->
+
+<section id="gallery">
+
+    <h2>Réalisations</h2>
+    <hr>
+
+    <!-- NOM DU THEME SELECTIONNE -->
+    <div class="themes">
+        <h3 class="theme-arrow"><?= htmlspecialchars($tplVars['themes_name']); ?></h3>
+    </div>
+
+    <section class="articles">
+        <!-- BOUCLE SUR LES REALISATIONS EN FONCTION DU THEME -->
+        <?php foreach ($tplVars['prods'] as $p) :
+            $isLiked = $userId ? $model->isLikedByUser($userId, $p['Id']) : false;
+            $likeCount = $model->countLikes($p['Id']);
+        ?>
+            <article class="list">
+                <h4><?= htmlspecialchars($p['name']); ?></h4>
+                <img src="<?= $tplVars['WWW_URL']; ?>uploads/realisations/<?= htmlspecialchars($p['photoGallery']); ?>" />
+                <div class="like-section">
+                    <?php if ($userId) : ?>
+                        <button class="like-button <?= $isLiked ? 'liked' : ''; ?>" data-realisation-id="<?= $p['Id']; ?>">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    <?php endif; ?>
+                    <span class="like-count"><?= $likeCount ?> j'aimes</span>
+                </div>
+                <hr>
+            </article>
+        <?php endforeach; ?>
+        <div id="message" style="display: none;"></div>
+    </section>
+</section>

@@ -1,0 +1,31 @@
+<!-- LISTE DES THEMES -->
+<section>
+            
+    <h2>Gestion des thèmes</h2>
+    <hr>
+            
+    <div class="new">
+        <a href="<?= $tplVars['WWW_URL']; ?>index.php?controller=Admin\<?= $tplVars['crud'];?>&task=newForm">Ajouter un thème</a>
+    </div>
+            
+    <table id="table-backend">
+        <thead>
+            <tr>
+                <th>Noms des thèmes</th>
+                <th>Actions</th>
+            </tr>   
+        </thead>
+        <tbody>
+            <!-- BOUCLE SUR LA LISTE DES THEMES -->
+            <?php foreach($tplVars['list'] as $item): ?>
+                <tr>
+			    	<td><?= htmlspecialchars($item['name']); ?></td>
+			    	<td>
+                        <a href="<?= $tplVars['WWW_URL']; ?>index.php?controller=Admin\<?= $tplVars['crud'];?>&task=delete&id=<?= intval($item['Id']);?>" class="suppr">Supprimer</a>
+                    </td>
+		        </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+</section>    

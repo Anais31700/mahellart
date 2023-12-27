@@ -1,0 +1,32 @@
+<!-- PAGE DE CONNEXION -->
+<section>
+    
+    <h2>Mon compte</h2>
+
+    <!-- FORMULAIRE DE CONNEXION AU COMPTE -->    
+    <form action="<?= $tplVars['WWW_URL']; ?>index.php?controller=user&task=login" method="POST">
+        <input type="hidden" name="token" value="<?= $tplVars['Token']; ?>" />
+        
+        <fieldset>
+                <legend>J'ai déjà un compte</legend>
+            <div>
+                <label>Mon adresse email</label>
+                <div class="value"><input name="mail" type="text"></div>
+            </div>
+            <div>
+                <label>Mon mot de passe</label>
+                <div class="value"><input name="password" type="password"></div>
+            </div>
+            <div>
+                <button class="validate">Se connecter</button>
+            </div>
+        </fieldset>
+        
+        <!-- REDIRIGE VERS LA CREATION DE COMPTE -->
+        <fieldset>
+            <legend>Je n'ai pas de compte</legend>
+            <div><a href="<?= $tplVars['WWW_URL']; ?>index.php?controller=user&task=index" class="validate">Créer un compte</a></div>
+        </fieldset>
+    </form>
+    
+</section>

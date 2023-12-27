@@ -1,0 +1,541 @@
+* {
+	box-sizing: border-box; 
+    margin: 0 auto;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+    font-size: 12px; /* Pour les navigateurs qui ne supportent pas le Rem */
+    font-size: 1.2rem; /* Pour les navigateurs « Responsive » */
+    text-align: center;
+    font-family: 'Nanum Gothic', sans-serif;
+    width: 100%;
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+/* ******************************************** */
+/* ****************** HEADER ****************** */
+/* ******************************************** */
+
+header {
+    width: 100%;
+    padding-top: 10px;
+    background-image: url(../img/dan-cristian-padure-C_hlU3jXEvM-unsplash.jpg);
+    background-position: 50% 50%;
+}
+
+h1 {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 5rem;
+    padding: 40px; 
+    color: orange;
+    text-shadow: -3px 0px 4px black;
+}
+
+/* *********** NAVBAR *********** */
+
+.navbar {
+    background-color: rgb(255, 165, 0, 0.9);
+    padding: 10px;
+}
+
+.nav {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.nav a {
+    color: black;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.8rem;
+    padding: 10px;
+}
+
+.green {
+    color: green;
+    font-size: 2rem;
+    padding: 10px 5px;
+}
+
+.red {
+    color: red;
+    padding-bottom: 10px;
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 768px){
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav a {
+        font-size: 2rem;
+    }
+
+    .navbar div {
+        font-size: 2rem;
+    }
+}
+
+/* ******************************************** */
+/* ****************** FOOTER ****************** */
+/* ******************************************** */
+
+footer {
+    background-color: orange;
+    margin-top: 20px;
+    padding: 30px 20px 60px 20px;
+}
+
+footer p {
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+footer a {
+    color: red;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px){
+
+    footer p {
+        padding: 5px;
+        font-size: 1.7rem;
+    }
+}
+
+/* ******************************************** */
+/* ***************** GENERAL ****************** */
+/* ******************************************** */
+
+h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    padding: 15px ;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+h3 {
+    font-size: 1.8rem;
+    padding: 15px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+h4 {
+    font-size: 1.5rem;
+    padding: 15px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+hr {
+    margin: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+p {
+    font-size: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* bouton VALIDER */
+.validate {
+    color: green;
+    border: 1px solid green;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 10px auto;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+@media screen and (min-width: 768px){
+
+    main {
+        width: 80%;
+        padding: 30px 0;
+    }
+
+    .hidden {
+        display: inline;
+    }
+
+    .green, .red {
+        padding-right: 5px;
+        padding-left: 10px;
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+
+    h1 {
+        font-size: 7rem;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+    
+    h3 {
+        font-size: 2.4rem;
+    }
+    
+    h4 {
+        font-size: 2rem;
+    }
+}
+
+/* *** FORMULAIRE *** */
+
+legend, label, input, select {
+    margin-top: 5px;
+}
+
+form {
+    width: 80%;
+}
+
+form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: both;
+    min-width: 60%;
+    margin: 5px auto;  
+}
+
+@media screen and (min-width: 768px){
+
+    fieldset {
+        margin-bottom: 50px;
+        padding: 20px;
+    }
+
+    legend {
+        font-size: 1.6rem;
+    }
+
+    label, input, select {
+        width: 60%;
+        height: 40px;
+        font-size: 1.6rem;
+    }
+}
+
+
+/* ********************************************** */
+/* ****************** FRONTEND ****************** */
+/* ********************************************** */
+
+/* ***************** HOME ***************** */
+
+.login div {
+    text-align: right;
+    padding: 5px;
+}
+
+#presentation img {
+    width: 150px;
+    border-radius: 100px;
+    border: 2px solid orange;
+    margin: 10px;
+}
+
+#presentation p {
+    text-align: left;
+    margin: 10px;
+}
+
+#presentation article:first-child {
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+#presentation article:nth-last-child(1) {
+    border: 1px solid orange;
+    border-radius: 10px;
+    margin: 15px 10px 40px 10px;
+    background-color: rgb(247, 204, 125);
+}
+
+@media screen and (min-width: 768px){
+
+    .login small {
+        font-size: 1.2rem;
+    }
+    
+    #presentation article:first-child {
+        width: 80%;
+        margin-bottom: 40px;
+    }
+
+    #presentation img {
+        width: 180px;
+        border-radius: 40px;
+        border: 2px solid orange;
+    }
+
+    #presentation article:nth-last-child(1) {
+        /* width: 70%; */
+        padding: 10px 50px;
+    }
+
+}
+
+/* *************** THEMES ***************** */
+
+.themes {
+	padding-top: 25px;
+    padding-bottom: 25px;
+	background: #FFF;
+	width: 70%;
+	position: relative;
+    margin-bottom: 10px;
+    
+}
+
+.theme-arrow {
+    background: rgb(247, 204, 125);
+    padding: 7px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+  }
+  
+.theme-arrow:before {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    left: -12px;
+    border-top: 15px solid transparent;
+    border-right: 12px solid orange;
+    border-bottom: 15px solid transparent;
+    width: 0;
+  }
+
+.theme-arrow:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    right: -12px;
+    border-top: 15px solid transparent;
+    border-left: 12px solid orange;
+    border-bottom: 15px solid transparent;
+    width: 0;
+  }
+
+@media screen and (min-width: 768px) {
+
+    .themes-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .themes {
+        width: 40%;
+        margin-bottom: 20px;
+    }
+}
+
+/* ** GALLERY DES REALISATIONS PAR THEMES ** */
+
+.list img {
+    width: 60%;
+    padding-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .list img {
+        width: 80%;
+    }
+
+    #gallery .articles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .articles .list {
+        width: 50%;
+        padding: 10px;
+    }
+    
+}
+
+@media screen and (min-width:1024px) {
+
+    #gallery article {
+        width: 33%;
+    }
+
+}
+
+/* ************************************************** */
+/* ******************** BACKEND ********************* */
+/* ************************************************** */
+
+/* ******************** DASHBORD ******************** */
+
+#menu article {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    background-color: rgb(207, 230, 230);
+    border-bottom: 5px solid grey;
+}
+
+#menu article a {
+    font-size: 2rem;
+    color: black;
+}
+
+#menu article p {
+    font-size: 1.6rem;
+    padding: 10px 0 10px 0;
+}
+
+/* ** GESTION DES REALISATIONS / GESTION DES THEMES ** */
+
+/* **** TABLEAU **** */
+
+#table-backend {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+}
+
+#table-backend thead th {
+    color: black;
+    padding: 10px auto;
+    background-color: rgb(173, 199, 199);
+    font-size: 1.8rem;
+}
+
+#table-backend th, td {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    text-align: left;
+    font-size: 1.4rem;
+}
+
+td a {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 5px;
+    text-align: center;
+}
+
+#table-backend tr:nth-child(even) td{
+    background:   rgb(207, 230, 230);
+}
+
+#table-backend tr:nth-child(odd) {
+    background: #FFF
+}
+
+/* **** BOUTONS **** */
+
+/* bouton SUPPRIMER */
+.suppr {
+    border: 1px solid red;
+    padding: 5px;
+    margin: 10px auto;
+    border-radius: 10px;
+    color: red;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+/* bouton MODIFIER */
+.modif {
+    border: 1px solid rgb(99, 98, 98);
+    padding: 5px;
+    margin: 10px auto;
+    border-radius: 10px;
+    color: rgb(99, 98, 98);
+    background-color: #fff;
+    font-weight: bold;
+}
+
+/* bouton REVOQUER/PROMOUVOIR */
+.revo-pro {
+    border: 1px solid blue;
+    padding: 5px;
+    margin: 10px auto;
+    border-radius: 10px;
+    color: blue;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+/* bouton AJOUTER */
+
+.new {
+    width: 50%;
+    margin-top: 20px;
+}
+
+.new a {
+    color: green;
+    border: 1px solid green;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 10px auto ;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+/* bouton LIKE */
+.like-button .fa-heart {
+    color: white; /* Couleur par défaut */
+}
+.like-button.liked .fa-heart {
+    color: red; /* Couleur quand liké */
+}
+
+
+/* ************** Mail ************** */ 
+
+.mail p {
+    text-align: left;
+    padding: 0 20px 0 20px;  
+    margin-bottom: 10px;  
+}
+
+@media screen and (min-width: 768px) {
+
+    .mail {
+        width: 70%;
+        margin-top: 10px;
+    }
+}
+
+

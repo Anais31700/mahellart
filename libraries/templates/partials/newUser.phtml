@@ -1,0 +1,45 @@
+<!-- PAGE DE CREATION DE COMPTE -->
+<section>
+
+    <h2>Je crée mon compte</h2>
+
+    <!-- FORMULAIRE DE CREATION DE COMPTE -->
+    <form action="<?= $tplVars['WWW_URL']; ?>index.php?controller=user&task=create" method="POST">
+        <input type="hidden" name="token" value="<?= $tplVars['Token']; ?>" />
+
+        <fieldset>
+
+            <div>
+                <label>Mon prénom <span class="red">*</span></label>
+                <div class="value"><input name="prenom" type="text"></div>
+            </div>
+            <div>
+                <label>Mon nom <span class="red">*</span></label>
+                <div class="value"><input name="nom" type="text" required></div>
+            </div>
+            <div>
+                <label>Mon adresse email <span class="red">*</span></label>
+                <div class="value"><input name="mail" type="text" required></div>
+            </div>
+            <div>
+                <label>Mon mot de passe <span class="red">*</span></label>
+
+                <div class="value">
+                    <input name="password" type="password" required>
+                    <span>Le mot de passe doit avoir une <strong>majuscule</strong> et un <strong>chiffre</strong></span>
+                </div>
+
+            </div>
+            <div>
+                <label>Re-saisir à nouveau <span class="red">*</span></label>
+                <div class="value"><input name="password2" type="password" required></div>
+            </div>
+            <div>
+                <button class="btn">Valider</button>
+            </div>
+
+        </fieldset>
+
+        <small><span class="red">*</span> Mentions obligatoires</small>
+    </form>
+</section>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MA-HELL-ART</title>
+        <meta name="description" content="design cutter">
+
+        <!-- FONT FAMILY -->
+        <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+        <!-- Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+        <!-- Appel le style css -->
+        <link rel="stylesheet" href="<?= $tplVars['WWW_URL']; ?>assets/css/styles.css">
+    </head>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>Ma-hell-art</h1>
+
+        <!-- BARRE DE NAVIGATION -->
+        <div class="navbar">
+            
+            <!-- CONNEXION / DECONNEXION -->
+            <div>
+                <?php
+                //si je suis connecté, j'affiche le bouton de déconnexion
+                //sinon j'affiche le bouton de connexion
+                if (\Session::isConnected()) :
+                ?>
+                    <a href="<?= $tplVars['WWW_URL']; ?>index.php?controller=user&task=out"><i class="fas fa-power-off red"></i><span class="hidden">Se déconnecter</span></a>
+                <?php
+                else :
+                ?>
+                    <a href="<?= $tplVars['WWW_URL']; ?>index.php?controller=user&task=loginForm"><i class="fas fa-power-off green"></i><span class="hidden">Se connecter</span></a>
+                <?php
+                endif;
+                ?>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- AFFICHAGE DE LA PAGE -->
+    <main>
+
+        <!-- AFFICHAGE DES MESSAGES D'ERREUR -->
+        <?php if (\Session::hasFlashes('error')) : ?>
+            <div>
+                <div>
+                    <?php foreach (\Session::getFlashes('error') as $message) : ?>
+                        <p><?= $message ?></p>
+                    <?php endforeach ?>
+                </div>
+            </div>
+        <?php endif ?>
+
+        <!-- AFFICHAGE DES MESSAGES DE SUCCES -->
+        <?php if (\Session::hasFlashes('success')) : ?>
+            <div>
+                <div class="text">
+                    <?php foreach (\Session::getFlashes('success') as $message) : ?>
+                        <p><?= $message ?></p>
+                    <?php endforeach ?>
+                </div>
+            </div>
+        <?php endif ?>
+
+        <!-- CHARGEMENT DE LA PAGE -->
+        <?= $pageContent ?>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>Administration du site</h3>
+    </footer>
+</body>
+
+</html>

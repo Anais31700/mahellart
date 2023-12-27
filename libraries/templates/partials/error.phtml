@@ -1,0 +1,13 @@
+<!-- PAGE D'ERREUR QUI S4AFFICHE S'IL Y A UNE ERREUR DE CHARGEMENT DE LA PAGE DEMANDEE -->
+<section>
+    <h1>Une erreur est survenue !</h1>
+
+    <p>Une erreur est survenue, merci de vous reconnecter plus tard ou de contacter un administrateur.</p>
+
+    <h3>Détails de l'erreur</h3>
+    <p>N'hésitez pas à fournir le code d'erreur et le message suivant à l'administrateur :</p>
+    <p><strong>Code : </strong> <?= $tplVars["code"];?></p>
+    <p><strong>Message : </strong><em><?= $tplVars["message"];?></em></p>
+
+    <a href="index.php">Retour à l'accueil du site</a>
+</section>

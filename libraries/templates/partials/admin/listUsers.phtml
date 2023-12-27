@@ -1,0 +1,30 @@
+<h2>Liste des Utilisateurs</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Admin</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($tplVars['users'] as $user) : ?>
+            <tr>
+                <td><?= htmlspecialchars($user['Id']) ?></td>
+                <td><?= htmlspecialchars($user['nom']) ?></td>
+                <td><?= htmlspecialchars($user['prenom']) ?></td>
+                <td><?= htmlspecialchars($user['mail']) ?></td>
+                <td><?= $user['admin'] ? 'Oui' : 'Non' ?></td>
+                <td>
+                    <a href="<?= WWW_URL ?>index.php?controller=Admin&task=deleteUser&id=<?= $user['Id'] ?>" class="suppr">Supprimer</a>
+                    <a href="<?= WWW_URL ?>index.php?controller=Admin&task=changeAdminStatus&id=<?= $user['Id'] ?>&status=<?= $user['admin'] ? 0 : 1 ?>" class="revo-pro">
+                        <?= $user['admin'] ? 'Révoquer Admin' : 'Promouvoir Admin' ?>
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

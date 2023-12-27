@@ -1,0 +1,35 @@
+<h2>Pour me contacter</h2>
+
+    <form action="<?= $tplVars['WWW_URL']; ?>index.php?controller=contact&task=create" method="POST">
+        <fieldset>
+            <div>
+                <label for="lastname">Nom <span class="rouge">*</span></label>
+                <input type="text" name="lastname" id="lastname" placeholder="Votre Nom" value="" />
+            </div>
+
+            <div>
+                <label for="firstname">Prénom <span class="rouge">*</span></label>
+                <input type="text" name="firstname" id="firstname" placeholder="Votre prenom" value="" />
+            </div>
+
+            <div>
+                <label for="mail">Email <span class="rouge">*</span></label>
+                <input type="email" name="mail" id="mail" placeholder="Votre Email" value="" />
+            </div>
+
+            <div>
+                <label for="objet">Objet <span class="rouge">*</span></label>
+                <input type="text" name="objet" id="objet" placeholder="Objet" value="" />
+            </div>
+
+            <div>
+                <label for="message">Messages <span class="rouge">*</span></label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message ici" value=""></textarea>
+            </div>
+            
+            <button class="validate">Envoyer le mail</button>
+
+        </fieldset>
+
+        <small><span class="red">*</span> Mentions obligatoires</small>
+    </form>

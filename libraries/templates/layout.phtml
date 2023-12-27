@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA-HELL-ART</title>
+    <meta name="description" content="design cutter">
+
+    <!-- FONT FAMILY -->
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+    <!-- Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+    <!-- Appel le style css -->
+    <link rel="stylesheet" href="<?= $tplVars['WWW_URL']; ?>assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>Ma hell art</h1>
+
+        <!-- BARRE DE NAVIGATION -->
+        <div class="navbar">
+
+            <!-- MENU -->
+            <nav class="nav">
+                <a href="<?= $tplVars['WWW_URL']; ?>">Accueil</a>
+                <a href="<?= $tplVars['WWW_URL']; ?>index.php?controller=Themeslist&task=index">Liste des thèmes</a>
+                <?php
+                    if (\Session::isAdmin()) {
+                        echo "<a href='" . $tplVars['WWW_URL'] . "index.php?controller=Admin\Dashboard&task=index'>Tableau de bord</a>";
+                    }
+                ?>
+
+                <a href="<?= $tplVars['WWW_URL']; ?>index.php?controller=Contact&task=index">Contact</a>
+            </nav>
+
+            <!-- CONNEXION / DECONNEXION -->
+            <div>
+                <?php
+                //si je suis connecté, j'affiche le bouton de déconnexion
+                //sinon j'affiche le bouton de connexion
+                if (\Session::isConnected()) :
+                ?>
+                    <a href="<?= $tplVars['WWW_URL']; ?>index.php?controller=user&task=out"><i class="fas fa-power-off red"></i><span class="hidden">Se déconnecter</span></a>
+                <?php
+                else :
+                ?>
+                    <a href="<?= $tplVars['WWW_URL']; ?>index.php?controller=user&task=loginForm"><i class="fas fa-power-off green"></i><span class="hidden">Se connecter</span></a>
+                <?php
+                endif;
+                ?>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- AFFICHAGE DE LA PAGE -->
+    <main>
+        <!--AFFICHAGE DE L'HEURE ET DE LA DATE DU JOUR -->
+        <div>
+            <small><span id="dateNow"></span>, <span id="hourNow"></span></small>
+        </div>
+        <!-- AFFICHAGE DES MESSAGES D'ERREUR -->
+        <?php if (\Session::hasFlashes('error')) : ?>
+            <div>
+                <div>
+                    <?php foreach (\Session::getFlashes('error') as $message) : ?>
+                        <p><?= $message ?></p>
+                    <?php endforeach ?>
+                </div>
+            </div>
+        <?php endif ?>
+
+        <!-- AFFICHAGE DES MESSAGES DE SUCCES -->
+        <?php if (\Session::hasFlashes('success')) : ?>
+            <div>
+                <div class="text">
+                    <?php foreach (\Session::getFlashes('success') as $message) : ?>
+                        <p><?= $message ?></p>
+                    <?php endforeach ?>
+                </div>
+            </div>
+        <?php endif ?>
+
+        <!-- CHARGEMENT DE LA PAGE -->
+        <?= $pageContent ?>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <section>
+            <h3>Contact</h3>
+            <p>Vous pouvez me contacter en remplisant le formulaire <a href="contact.html" target="_blank">ICI</a></p>
+            <p>ou par :</p>
+            <p>Instagram : <a href="https://www.instagram.com/ma_hell_art/" target="_blank"><i class="fab fa-instagram"></i> @ma_hell_art</a></p>
+        </section>
+    </footer>
+
+    <script src="<?= $tplVars['WWW_URL']; ?>assets/js/main.js"></script>
+</body>
+
+</html>

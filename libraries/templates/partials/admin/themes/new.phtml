@@ -1,0 +1,17 @@
+<!-- FORMULAIRE POUR AJOUTER UN NOUVEAU THEME -->
+<h2>Ajouter un thème</h2>
+
+<form enctype="multipart/form-data" action="<?= $tplVars['WWW_URL']; ?>index.php?controller=Admin\<?= $tplVars['crud'];?>&task=create" method="POST">
+
+    <fieldset>
+        <legend>Nouveau Thème</legend>
+        
+        <div>
+            <label for="name_theme">Nom du thème : </label>
+            <input type="text" id="name_theme" name="name_theme" value="">
+        </div>
+
+        <button class="validate">Ajouter le thème</button>
+    </fieldset>
+
+</form>

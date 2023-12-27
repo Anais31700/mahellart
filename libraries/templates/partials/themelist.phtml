@@ -1,0 +1,19 @@
+<!-- LISTE DES THEMES DES REALISATIONS -->
+
+
+	<h2>Thèmes des réalisations :</h2>
+	<hr>
+
+	<section class="themes-list">
+	
+	<!-- BOUCLE SUR LES THEMES -->
+	<?php foreach($tplVars['themes'] as $themes): ?>
+	<div class="themes">
+		<h3 class="theme-arrow"><a href="<?= $tplVars['WWW_URL']; ?>index.php?controller=Themes&task=index&id=<?= intval($themes['Id']);?>">
+		<?= htmlspecialchars($themes['name']); ?></a></h3>
+	</div>
+	
+	<?php endforeach; ?>
+
+	</section>
+	
